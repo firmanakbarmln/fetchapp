@@ -1,1 +1,1 @@
-worker: python fetch.py
+web: gunicorn fetch:app

@@ -4,6 +4,7 @@ from flask import request, Flask
 
 app = flask.Flask(__name__)
 
+@app.route('/')
 @app.route('/api/fetch', methods=['POST'])
 def fetch():
     fetch = fetchapp.Fetch.fetchData()
