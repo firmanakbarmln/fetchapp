@@ -1,1 +1,1 @@
-web:gunicorn fetch:app
+web: python fetch.py
