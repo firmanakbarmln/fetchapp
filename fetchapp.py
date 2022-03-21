@@ -42,13 +42,13 @@ class Fetch:
                 "status": "failed",
                 "message": "user not login!"
             }
-        response_API = requests.post('https://firmanakbarm-api.000webhostapp.com/claim.php', headers={"Cookie": "X-SESSION="+s})
+        response_API = requests.post('https://firmanakbarm-api.000webhostapp.com/claim/', headers={"Cookie": "X-SESSION="+s})
         data = json.loads(response_API.text)
         return data
     
     def login(nik, password):
         body = {'nik':nik, 'password':password}
-        response_API = requests.post('https://firmanakbarm-api.000webhostapp.com/login.php', data=body)
+        response_API = requests.post('https://firmanakbarm-api.000webhostapp.com/login/', data=body)
         data = json.loads(response_API.text)
         c = make_response(data, 200)
         c.set_cookie(
